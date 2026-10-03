@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{title}}</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        {% block headext %}{% endblock %}
+    </head>
+    <body>
+        <div id="content" class="h-entry">
+            <h1 class="p-name">{{title}}</h1>
+            {% block body %} body block {% endblock %} {% if tldr %}
+            <div class="tldr p-summary"><p>{{tldr}}</p></div>
+            {% endif %}
+        </div>
+        <!--content-->
+
+        <footer>
+            <div id="footer">
+                <div id="navigation">
+                    <a href="{{ROOT}}index.html">home</a>
+                    <a href="{{ROOT}}index.atom">atom feed</a>
+                </div>
+
+                <p id="subtext">AI-generated research, so it might be sloppy.</p>
+            </div>
+            <!--footer-->
+        </footer>
+    </body>
+</html>

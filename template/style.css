@@ -1,0 +1,383 @@
+@charset "UTF-8";
+
+/* --------------------------------------------------------------
+   Palette:
+     272727  near-black — body text
+     2b50aa  cobalt blue — headings, primary links
+     ff9fe5  pink — accents, underlines, borders
+     ffd4d4  peach — surfaces (nav, quotes, tldr, code)
+     ff858d  coral — hovers, highlights
+   -------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-variant: inherit;
+    vertical-align: baseline;
+}
+
+:focus { outline: 0; }
+
+body {
+    line-height: 1.6em;
+    color: #272727;
+    background-color: #ffffff;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display: block; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: none; }
+blockquote, q { quotes: none; }
+
+html { overflow-y: scroll; }
+
+/* Slop splash: a stretch of the nice colors along the top */
+body::before {
+    content: "";
+    display: block;
+    height: 6px;
+    background: linear-gradient(90deg, #2b50aa, #ff9fe5 45%, #ff858d);
+}
+
+/* ---- layout ---- */
+
+#header,
+footer,
+#content {
+    margin: 0 auto;
+    padding: 14px 20px;
+    position: relative;
+    width: 36em;
+    max-width: 92%;
+}
+
+@media only screen and (max-width: 600px) {
+    #header,
+    footer,
+    #content { padding: 12px 18px; width: 92%; }
+}
+
+#content { text-rendering: optimizeLegibility; }
+
+#content p+p,
+#content p+ul,
+#content p+ol,
+#content p+blockquote,
+#content p+pre,
+#content ul+p,
+#content ul+blockquote,
+#content ol+p,
+#content ol+blockquote,
+#content blockquote+p,
+#content blockquote+ul,
+#content pre+p,
+#content blockquote+ol { margin-top: 1em; }
+
+#content blockquote,
+#content ol,
+#content ul { margin-left: 1.4em; }
+
+#content ul { list-style-type: circle; }
+#content ol { list-style-type: decimal; }
+ol.collection { list-style-type: none; margin-left: 0; }
+
+#content pre { overflow: auto; padding: 0.5em 0.6em; }
+
+#content img { max-width: 100%; }
+
+/* ---- typography ---- */
+
+:root {
+    --font-serif: "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
+        "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter",
+        "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow",
+        "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L",
+        Georgia, serif;
+}
+
+html, body { font-size: 15pt; line-height: 1.65em; }
+
+#content pre.code .comment,
+html, body, table, textarea, input {
+    font-family: var(--font-serif);
+}
+
+h1, h2, h3, h4 { text-wrap: balance; }
+
+.h-entry .p-name,
+#header h1 {
+    font-size: 2.2em;
+    line-height: 1.2em;
+    color: #2b50aa;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+}
+
+.h-entry .p-name { border-bottom: 4px solid #ff9fe5; padding-bottom: 0.25em; }
+
+#content h1,
+#content h2 { margin-top: 1.4em; color: #2b50aa; }
+
+#content h1 { font-size: 1.4em; }
+#content h2 { font-size: 1.25em; }
+#content h3, #content h4 { color: #ff858d; }
+
+#content h2 { border-bottom: 2px solid #ffd4d4; padding-bottom: 0.15em; }
+
+#toc a,
+dt, strong, samp, dfn, h3, h4 { font-weight: bold; }
+
+em, blockquote, q, .tldr,
+#content .thanks { font-style: italic; }
+
+tt,
+span.bitcoin,
+pre, code, samp, kbd,
+var, input[type="password"] {
+    font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Consolas,
+        Monaco, "Liberation Mono", Andale Mono, monospace;
+    font-size: 0.9em;
+}
+
+sup, sub { font-size: 0.7em; line-height: 1em; }
+sub { vertical-align: sub; }
+sup { vertical-align: super; }
+
+#content time,
+#content .bibliography,
+#content .meta,
+#feedlink { font-size: 0.85em; }
+
+#content .date { font-variant: small-caps; }
+
+.h-entry .p-name,
+#header .author,
+blockquote cite, q cite,
+blockquote em, q em { font-style: normal; }
+
+/* ---- links ---- */
+
+a { color: #2b50aa; }
+
+article a,
+ol.collection a,
+#subtext a {
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: #ff9fe5;
+}
+
+a:hover,
+a:focus,
+article a:hover,
+ol.collection a:hover,
+#subtext a:hover { color: #ff858d; }
+
+a:hover { text-decoration-color: #ff858d; }
+
+#content a:focus { outline: 2px solid #ff9fe5; }
+
+a:active { position: relative; top: 1px; }
+
+#toc a { color: #272727; text-transform: uppercase; }
+#toc a:hover { background-color: #ffd4d4; }
+
+/* ---- title & header ---- */
+
+#header h1 { margin-top: 50px; padding-bottom: 10px; }
+
+#content .subtitle {
+    color: #ff858d;
+    font-style: italic;
+    margin-top: 0.4em;
+}
+
+/* ---- collection (home) ---- */
+
+ol.collection li {
+    margin-top: 1.25em;
+    padding: 0.7em 0.9em;
+    background-color: #ffd4d4;
+    border-left: 4px solid #ff9fe5;
+    border-radius: 6px;
+}
+
+ol.collection li:hover { border-left-color: #ff858d; }
+
+ol.collection a { font-weight: bold; text-decoration: none; }
+ol.collection li:hover a { color: #2b50aa; }
+
+.collection time {
+    display: block;
+    color: #ff858d;
+    font-size: 0.85em;
+    margin-top: 0.15em;
+}
+
+.collection .tldr {
+    display: block;
+    margin-top: 0.4em;
+    color: #272727;
+    font-style: normal;
+    font-size: 0.95em;
+}
+
+/* ---- content extras ---- */
+
+#content blockquote {
+    background-color: #ffd4d4;
+    border-left: 4px solid #ff9fe5;
+    border-radius: 0 6px 6px 0;
+    padding: 0.6em 1em;
+    margin-left: 1.4em;
+    margin-right: 0.5em;
+}
+
+.tweetable,
+.exercise {
+    margin: 0.75em 0;
+    padding: 0.4em 0.6em;
+    border-radius: 6px;
+}
+
+.exercise { background-color: #ffd4d4; border: 1px solid #ff9fe5; }
+.exercise span { color: #ff858d; }
+.tweetable { background-color: #ffd4d4; }
+.tweetable a { font-size: 0.6em; float: right; }
+
+#content code,
+#content pre { color: #272727; background-color: #ffd4d4; }
+#content code { padding: 0.05em 0.3em; border-radius: 4px; }
+#content pre.code { border: 1px solid #ff9fe5; border-width: 2px 0; }
+#content pre.code .punctuation { color: #ff858d; }
+#content pre.code .comment { color: #ff9fe5; }
+
+#content table { border: 1px solid #ff9fe5; border-width: 1px 0; margin: 0.5em 0; }
+#content table th,
+#content table td { padding: 3px 6px; }
+#content table th { color: #2b50aa; border-bottom: 1px solid #ffd4d4; }
+
+hr { border: 0; border-top: 2px solid #ff9fe5; width: 33%; margin: 2em auto; }
+
+#content #hello h1 { margin-top: 0; }
+
+#content #signed { margin: 2em 0; text-align: right; }
+#content #signed time { color: #ff858d; }
+
+#content .meta,
+.collection time + .tldr { color: #272727; }
+
+#content .meta { margin-left: 2em; color: rgba(39, 39, 39, 0.6); }
+.collection time { color: #ff858d; }
+
+#content .thanks { margin: 3em 0 0 0; }
+
+div.separator { text-align: center; }
+
+#content .corepoint {
+    display: block;
+    margin-left: 0.75em;
+    font-size: 1.9em;
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
+    color: #2b50aa;
+}
+
+.image-right { float: right; }
+
+#content .bibliography { margin-top: 1em; }
+
+/* ---- footer & navigation ---- */
+
+#navigation {
+    margin: 2em 0 1em 0;
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+}
+
+#navigation a {
+    color: #2b50aa;
+    font-weight: bold;
+    font-size: 0.95em;
+    text-decoration: none;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: #ff9fe5;
+}
+
+#navigation a:hover {
+    color: #ff858d;
+    text-decoration-color: #ff858d;
+}
+
+#subtext {
+    margin-top: 1em;
+    color: rgba(39, 39, 39, 0.6);
+    font-size: 0.85em;
+    border-top: 2px solid #ffd4d4;
+    padding-top: 0.8em;
+}
+
+#footer { padding: 1em 0 60px 0; }
+
+#feedlink { text-align: right; }
+#feedlink a { color: #ff858d; }
+
+#searchbox,
+#legalese,
+#ad { margin-top: 1em; }
+
+#searchbox input[type=search] { width: 60%; }
+input[type="search"] { -webkit-appearance: textfield; }
+
+/* ---- misc ---- */
+
+::selection { background: #ff9fe5; color: #272727; }
+
+#content a:focus { text-shadow: 0 0 white; }
+
+.social { display: none; }
+.social:visited { display: inline; }
+img.mailto,
+.social img { vertical-align: middle; }
+
+@media print {
+    #sidebar,
+    #footer { display: none; }
+    a, a:visited { color: inherit; text-decoration: none; }
+    #content { width: 95%; line-height: 1.6em; }
+    html, body { background-color: #fff; }
+}
+
+#content pre.code .punctuation { color: #ff858d; }
+
+#hello img,
+#subtext img {
+    float: left;
+    border-radius: 6px;
+    margin-right: 0.4em;
+    border: 1px solid #ff9fe5;
+}

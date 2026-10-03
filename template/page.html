@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block headext %}
+<meta property="og:title" content="{{title}}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{selfurl}}" />
+<meta property="og:modified_time" content="{{date}}" />
+{% if tldr %}
+<meta property="og:description" content="{{tldr|e}}" />
+<meta name="description" content="{{tldr|e}}" />
+{% endif %}
+{% if image_src %}
+<meta property="og:image" content="{{base_url}}{{image_src}}" />
+{% endif %}
+<meta name="robots" content="index,follow" />
+<style type="text/css">{{inlinecss}}</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{title}}",
+  "url": "{{selfurl}}",
+  "dateModified": "{{date}}",
+{% if tldr %}
+  "description": "{{tldr}}",
+{% endif %}
+  "author": {
+      "@type": "Person",
+      "name": "{{CONFIG["base"]["author"]}}"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{base_url}}index.html"
+  }
+}
+</script>
+{% endblock headext %}
+
+{% block body %}
+<article class="e-content">
+{{contents}}
+<div id="signed">
+  <p><time class="dt-published" datetime="{{date}}">{{date}}</time></p>
+</div>
+</article>
+{% endblock %}

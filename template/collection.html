@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block headext %}
+<link rel="alternate" type="application/atom+xml" title="Atom feed" href="{{ atomlink }}" />
+<style type="text/css">{{inlinecss}}</style>
+{% endblock headext %}
+{% block body %}
+{% if subtitle %}<p class="subtitle">{{ subtitle }}</p>{% endif %}
+<ol class="collection">
+{% for item in collection %}
+	<li><a href="{{ item.link }}">{{ item.title }}</a>
+		<time datetime="{{ item.date }}">{{ item.date }}</time>
+		<span class="tldr">{{ item.tldr }}</span>
+	</li>
+{% endfor %}
+</ol>
+{% endblock %}

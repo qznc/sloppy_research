@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>{{ title }}</title>
+ {% if subtitle %}<subtitle>{{ subtitle }}</subtitle>{% endif %}
+ <link href="{{ base_url }}{{ link }}"/>
+ <link rel="self" href="{{ base_url }}{{ atomlink }}"/>
+ <id>{{ base_url }}{{ atomlink }}</id>
+ <updated>{{ date_parsed.strftime('%Y-%m-%dT%H:%M:%SZ') }}</updated>
+ <author>
+  <name>{{ author }}</name>
+  {% if author_email %}<email>{{ author_email }}</email>{% endif %}
+ </author>
+{% for item in collection %}
+ <entry>
+  <title>{{ item.title }}</title>
+  <link rel="alternate" href="{{ base_url }}{{ item.link }}"/>
+  <id>{{ base_url }}{{ item.link }}</id>
+  <updated>{{ item.date_parsed.strftime('%Y-%m-%dT%H:%M:%SZ') }}</updated>
+{% if item.tldr %}
+  <summary>{{ item.tldr }}</summary>
+  <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">
+    <p>{{ item.tldr }}</p>
+    <p><a href="{{ base_url }}{{ item.link }}">{{ feed_read_full }}</a></p>
+{% if item.image_src %}<p><img src="{{base_url}}{{item.image_src}}" /></p>{% endif %}
+    </div></content>
+{% endif %}
+ </entry>
+{% endfor %}
+</feed>
