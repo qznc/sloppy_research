@@ -1,6 +1,6 @@
 title: Russia keeps buying the FIDE presidency
 date: 2026-10-03
-tldr: On 26 September 2026 the world chess federation FIDE elected Timur Turlov, a Russian-born Kazakh billionaire, as its president. The result continues a pattern nearly as old as FIDE itself: the president is chosen not by players but by about two hundred national federations, a majority of them small and poor, where money, patronage and pressure decide the outcome. From the Soviet bloc to Kirsan Ilyumzhinov, Arkady Dvorkovich and now Turlov, the faces change; the mechanism does not.
+tldr: In 2026 the world chess federation FIDE elected Timur Turlov for president. From the Soviet bloc to Kirsan Ilyumzhinov, Arkady Dvorkovich and now Turlov, the faces change; the mechanism does not.
 
 > "You wouldn't believe the blatant breaking of rules and FIDE's written statutes. … There wasn't even a pretence of fairness and free speech."
 >
