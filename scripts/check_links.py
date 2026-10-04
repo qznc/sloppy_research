@@ -237,7 +237,7 @@ def main():
     args = ap.parse_args()
 
     if args.all:
-        files = sorted(Path("src").glob("*.md"))
+        files = sorted(Path("src").rglob("*.md"))
     elif args.files:
         files = [Path(f) for f in args.files]
     else:

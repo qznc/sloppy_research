@@ -89,7 +89,7 @@ def outfile_with_ext(infile, new_ext):
 	rel_dir = os.path.dirname(infile)[len(SRCDIR) + 1:]
 	root, _ext = os.path.splitext(base)
 	outfile = os.path.join(rel_dir, root) + new_ext
-	ensure_dir(os.path.dirname(outfile))
+	ensure_dir(os.path.join(OUTDIR, os.path.dirname(outfile)))
 	return outfile
 
 
@@ -104,6 +104,7 @@ def render(vars, outfile, tmpl_name="page.html"):
 	vars["CONFIG"] = _CONFIG
 	template = TMPL_ENV.get_template(tmpl_name)
 	target = os.path.join(OUTDIR, outfile)
+	ensure_dir(os.path.dirname(target))
 	with open(target, "w", encoding="utf-8") as out:
 		out.write(template.render(vars))
 
