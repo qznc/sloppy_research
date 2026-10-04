@@ -24,5 +24,9 @@ check-links *ARGS:
 	test -f {{SETUP_FLAG}} || just setup
 	{{ENVDIR}}/bin/python scripts/check_links.py {{ARGS}}
 
+# Look up or create Wayback snapshots for URLs/articles (see scripts/archive.py --help)
+archive *ARGS:
+	python3 scripts/archive.py {{ARGS}}
+
 shell:
 	bash -c ". {{ENVDIR}}/bin/activate && bash"

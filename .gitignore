@@ -1,3 +1,5 @@
 _tuxen/
 public/
 .env_*/
+scratch/
+__pycache__/
