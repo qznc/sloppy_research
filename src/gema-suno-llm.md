@@ -116,7 +116,7 @@ For LLM training data specifically, the practical answer to the question in our 
 
 **Primary research on memorisation**
 
-- N. Carlini, F. Tramèr, E. Wallace, M. Jagielski, A. Herbert-Voss, K. Lee, A. Roberts, T. Brown, D. Song, Ú. Erlingsson, A. Oprea, C. Raffel, "Extracting Training Data from Large Language Models", USENIX Security Symposium 2021. [Original](https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting-conference-data) · [PDF](https://arxiv.org/pdf/2012.07805)
+- N. Carlini, F. Tramèr, E. Wallace, M. Jagielski, A. Herbert-Voss, K. Lee, A. Roberts, T. Brown, D. Song, Ú. Erlingsson, A. Oprea, C. Raffel, "Extracting Training Data from Large Language Models", USENIX Security Symposium 2021. [Original](https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting) · [PDF](https://arxiv.org/pdf/2012.07805)
 - N. Carlini, D. Ippolito, M. Jagielski, K. Lee, F. Tramèr, C. Zhang, "Quantifying Memorization Across Neural Language Models", March 2022, arXiv:2202.07646. [Original](https://arxiv.org/abs/2202.07646)
 
 *Statute and case references cited in the text: § 15(2), 16, 19a, 44b, 95a UrhG; § 131 VGG; Article 2 and 3(1) InfoSoc Directive 2001/29/EC; Article 4 and Recitals 17–18 DSM Directive (EU) 2019/790; Article 53(1)(c)–(d) AI Act (EU) 2024/1689 and its Recitals 107–108; Article 8(1) Rome II Regulation (EC) 864/2007; Articles 106(1), 101, 107, 1201 U.S.C.; CJEU C-426/21 Ocilion, C-188/24 & C-190/24 WebGroup Czech Republic, C-580/23 & C-795/23 Mio, C-682/18 & C-683/18 YouTube and Cyando, C-433/20 Austro-Mechana.*

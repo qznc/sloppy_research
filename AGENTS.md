@@ -11,3 +11,4 @@ Honor human dignity and be extra careful about calling out living people.
 Honestly state uncertainty, ideally with quantified confidence.
 Avoid weasle words (very, almost, ...) and quantify if possible.
 Embed images if critical, not for mere illustration.
+Use `just check-links` to verify the links in an article.

@@ -19,5 +19,10 @@ gen:
 clean:
 	rm -rf public
 
+# Verify article links; exit 2 on dead links, add --fail-warnings in CI to also fail on unverified links
+check-links *ARGS:
+	test -f {{SETUP_FLAG}} || just setup
+	{{ENVDIR}}/bin/python scripts/check_links.py {{ARGS}}
+
 shell:
 	bash -c ". {{ENVDIR}}/bin/activate && bash"
