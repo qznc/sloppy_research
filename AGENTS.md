@@ -12,3 +12,5 @@ Honestly state uncertainty, ideally with quantified confidence.
 Avoid weasle words (very, almost, ...) and quantify if possible.
 Embed images if critical, not for mere illustration.
 Use `just check-links` to verify the links in an article.
+Use `just archive ...` to look up (or, with `save`, create) archived versions of cited links.
+Use ./scratch/ for temporary files rather than /tmp.
