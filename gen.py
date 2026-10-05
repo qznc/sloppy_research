@@ -160,7 +160,7 @@ def markdown_handler(infile):
 	contents, vars = load_infile(infile)
 	outfile = outfile_with_ext(infile, ".html")
 	if needs_update(outfile, infile):
-		vars["contents"] = markdown.markdown(contents)
+		vars["contents"] = markdown.markdown(contents, extensions=["tables"])
 		render(vars, outfile)
 
 
