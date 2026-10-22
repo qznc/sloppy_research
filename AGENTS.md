@@ -18,3 +18,13 @@ Use ./scratch/ for temporary files rather than /tmp.
 
 English articles into src/en/. Use simple British English.
 German articles into src/de/. Benutze möglichst einfache Sprache.
+
+## Tools
+
+Use `hister search` for web searches (uses a local index).
+Use `just page URL` to pull a page's contents from that index (checks the URL
+is an exact match and dumps readable text; `--html` for raw HTML). If it finds
+no snapshot, ask the user to visit the page so it gets indexed.
+
+Do not use `hister export` to fetch a single page: it dumps the whole index
+(~1 GB file). Keep fetched html in ./scratch/, not /tmp.

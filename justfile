@@ -24,6 +24,10 @@ check-links *ARGS:
 	test -f {{SETUP_FLAG}} || just setup
 	{{ENVDIR}}/bin/python scripts/check_links.py {{ARGS}}
 
+# Fetch a page's contents from hister's local index by URL (see scripts/page.py --help)
+page *ARGS:
+	python3 scripts/page.py {{ARGS}}
+
 # Look up or create Wayback snapshots for URLs/articles (see scripts/archive.py --help)
 archive *ARGS:
 	python3 scripts/archive.py {{ARGS}}
